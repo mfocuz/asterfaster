@@ -1,0 +1,11 @@
+% layout 'config';
+<table class="table">
+    <tr><td>Name</td><td>Edit</td><td>Delete</td></tr>
+    %foreach my $context (sort keys %{$contexts}) {
+      <tr id="<%=$context%>">
+	<td><%=$context%></td>
+	<td><a href="#"><img src="/images/svgs/fi-pencil.svg" class="icon_size2 context_edit"></a></td>
+	<td><a href="#"><img src="/images/svgs/fi-x.svg" class="icon_size2 context_delete"></a></td>
+      </tr>
+    %}
+</table>

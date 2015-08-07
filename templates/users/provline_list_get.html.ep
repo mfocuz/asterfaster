@@ -1,0 +1,15 @@
+% layout 'config';
+<table>
+    <tr><td><h6>Name</h6></td><td><h6>Host</h6></td><td><h6>From domain</h6></td><td><h6>Registrar</h6></td><td></td><td></td></tr>
+    %foreach my $user (sort {$a <=> $b} keys %$provlineData) {
+      <tr id="<%=$user%>">
+	<td><%=$user%></td><td><%=$provlineData->{$user}->{name}%></td>
+	<td><%=$user%></td><td><%=$provlineData->{$user}->{host}%></td>
+	<td><%=$user%></td><td><%=$provlineData->{$user}->{fromdomain}%></td>
+	<td><%=$user%></td><td><%=$provlineData->{$user}->{registrar}%></td>
+	<td><%=$user%></td><td><%=$provlineData->{$user}->{fromdomain}%></td>
+	<td><a href="#"><img src="/images/svgs/fi-pencil.svg" class="icon_size2"></a></td>
+	<td><a href="#"><img src="/images/svgs/fi-x.svg" class="icon_size2 provline_delete"></a></td>
+      </tr>
+    %}
+</table>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+    <title>AsterFaster</title>
+    %=stylesheet '/css/bootstrap.css'
+    %=javascript '/js/jquery-1.11.3.min.js'
+    %=javascript '/js/contexts_godmod.js'
+		%=javascript '/js/menu_top.js'
+</head>
+<body>
+	%=include 'menu_top'
+  <div class="container">
+    <br>
+    <br>
+    <br>
+      <form id="contextCreateForm">
+				<div class="page-header">
+					<h4>Create new dialplan</h4>
+				</div>
+				<div id="result" class="" role="alert"></div>
+				<h5>Enter context name:</h5>
+				<div class="input-group">
+					<span class="input-group-addon" id="basic-addon1"></span>
+					<input id="name" type="text" class="form-control" placeholder="Context name" aria-describedby="basic-addon1">
+				</div>
+				<br>
+				<div id="extensions">
+					<div id="exten0-div" class="row" style="display:none">    
+						<div class="span12 thumbnail">
+							<span class="thumbnail span1 muted text-center" style="margin-top:-5px; margin-left:-5px; background-color:#f5f5f5;">
+								<strong>New exten:</strong>
+							</span>
+							<div class="input-group">
+							<span class="input-group-addon" id="basic-addon1"></span>
+							<input id="exten0-input" type="text" class="form-control exten-input" placeholder="Exten" aria-describedby="basic-addon1">
+							</div>
+							<br>
+							<div id="exten0-step1-div" class="input-group step-div">
+								<span class="input-group-addon" id="basic-addon1">1</span>
+								<input id="exten0-step1-input" type="text" class="form-control step-input" placeholder="Step" aria-describedby="basic-addon1">
+							</div>
+							<br>
+							<div class="btn-group btn-group-justified" role="group" aria-label="...">
+								<div class="btn-group" role="group">
+									<button type="button" class="btn btn-info addNextStep">Add next instruction</button>
+								</div>
+								<div class="btn-group" role="group">
+									<button type="button" class="btn btn-warning deleteLastStep">Delete last instruction</button>
+								</div>
+								<div class="btn-group" role="group">
+									<button type="button" class="btn btn-danger deleteExten">Remove exten</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<button id="addExtenBtn" class="btn btn-info btn-block" type="button">Add extension</button>
+				<br>
+				<button id="createContextBtn" class="btn btn-primary btn-block" type="submit">Create or update Dialplan</button>
+      </form>
+    </div>
+
+</body>
+
+</html>

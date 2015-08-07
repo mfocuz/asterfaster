@@ -1,0 +1,13 @@
+% layout 'config';
+<table class="table">
+    <tr><td>Name</td><td>Strategy</td><td>Timeout</td><td>Edit</td><td>Delete</td></tr>
+    %foreach my $queue (sort keys %{$queues}) {
+      <tr id="<%=$queue%>">
+	<td><%=$queue%></td>
+	<td><%=$queues->{$queue}->{strategy}%></td>
+	<td><%=$queues->{$queue}->{timeout}%></td>
+	<td><a href="#"><img src="/images/svgs/fi-pencil.svg" class="icon_size2"></a></td>
+	<td><a href="#"><img src="/images/svgs/fi-x.svg" class="icon_size2 queue_delete"></a></td>
+      </tr>
+    %}
+</table>

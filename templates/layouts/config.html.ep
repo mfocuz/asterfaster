@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Configuration></title>
+    %=javascript '/js/jquery-1.11.3.min.js'
+    %=javascript '/js/contexts.js'
+    %=javascript '/js/users.js'
+    %=javascript '/js/queues.js'
+    %=javascript '/js/menu_top.js'
+    %=stylesheet '/css/foundation.css'
+    %=stylesheet '/css/asterfaster.css'
+  </head>
+  <body>
+    %=include 'menu_top'
+    <div class="large-2 columns">
+        %=include 'side_bar_conf'
+    </div>
+  <div class="large-10 columns">
+    <%= content %>
+  </div>
+  </body>
+</html>

@@ -1,0 +1,56 @@
+% layout 'config';
+<div class="row">
+  <br>
+  <div class="large-8 columns">
+    <table>
+      <thead>
+	<tr>
+	  <th>Users total</th>
+	  <th>Users online</th>
+	  <th>Users never registered</th>
+	</tr>
+      </thead>
+      <tbody id="userreport_body">
+      </tbody>
+    </table>
+    <table id="users">
+      <thead>
+	<tr><th>Name</th><th>Context</th>
+	<th>Role</th><th>UserAgent</th>  
+	<th>Edit</th><th>Delete</th></tr>
+      </thead>
+      <tbody id="users_body">
+      </tbody>
+    </table>
+  </div>
+  <div class="large-4 columns">
+    <img src="/images/svgs/fi-plus.svg" class="icon_size3">
+    <img src="/images/svgs/fi-torso.svg" class="icon_size5">
+    <form id="userCreateForm">
+      <label>Number
+	<input id="name" type="text" placeholder="Extension number">
+      </label>
+      <label>Password
+	<input id="password" type="password" placeholder="Password">
+      </label>
+      <label>Role
+	<select id="userrole">
+	  <option>User</option>
+	  <option>Admin</option>
+	</select>
+      </label>
+      <label>Dialplan
+	<select id="context">
+	  %foreach my $context (sort @$contexts) {
+	  <option><%= $context%></option>
+	  %}
+	</select>
+      </label>
+      <div id="result"></div>
+      <br>
+      <a id="createUserBtn" href="#" class="button expand tiny">Add</a>
+      <div id="result" class=""></div>
+    </form>
+    
+  </div>
+</div>

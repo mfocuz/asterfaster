@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head><title><%= title %></title></head>
+  %=stylesheet '/css/bootstrap.css'
+  <body>
+	<form class="form-inline" role="form">
+		<div class="form-group">
+    		<label class="sr-only" for="filter">Filter: </label>
+    		<input class="form-control" id="filter" name="filter">
+                <label class="sr-only" for="filter">Limit: </label>
+    		<input class="form-control" id="filter" name="limit">
+		<button type="submit" class="btn btn-success">Search</button>
+  		</div>
+	</form>
+	<br><br>
+        <table class="table">
+	    % my $users = $self->stash('users');
+            <tr><td>#</td><td>Extension</td><td>Username</td><td>Created</td><td>Edit</td><td>Delete</td></tr>
+                <% my $j=0; %>
+                %foreach my $i (sort keys %{$users}) {
+                    <tr><td><%=$j%></td><td><%=$users->{$i}->{exeten}%></td><td><%=$users->{$i}->{username}%></td>
+                    <td><%=$users->{$i}->{created}%></td>
+                    <td><button type="button" class="btn btn-info btn-xs">Edit</button></td>
+                    <td><button type="button" class="btn btn-info btn-xs">Delete</button></td>
+                <% $j++; %>
+		%}
+            </tr>
+        </table>
+  </body>
+</html>

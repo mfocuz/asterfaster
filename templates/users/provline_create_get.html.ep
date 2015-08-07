@@ -1,0 +1,46 @@
+% layout 'config';
+<div class="row">
+	<div class="large-4 columns">
+    <img src="/images/svgs/fi-telephone.svg" class="icon_size5">
+    <form id="provlineCreateForm">
+      <div class="page-header">
+        <h4>Create new provider line</h4>
+      </div>
+      <h5>Enter line credentials:</h5>
+      <div class="input-group">
+        <span class="input-group-addon" id="basic-addon1"></span>
+        <input id="name" type="text" class="form-control" placeholder="name" aria-describedby="basic-addon1">
+      </div>
+      <div class="input-group">
+        <span class="input-group-addon"></span>
+        <input id="password" type="password" class="form-control" placeholder="Password" required="">
+      </div>
+      <div class="input-group">
+        <span class="input-group-addon" id="basic-addon1"></span>
+        <input id="fromuser" type="text" class="form-control" placeholder="fromuser" aria-describedby="basic-addon1">
+      </div>
+      <h5>Choose dialplan</h5>
+      <select id="context" class="form-control">
+        %foreach my $context (sort @$contexts) {
+        <option><%= $context%></option>
+        %}
+      </select>
+      <h5>Enter provider connection data:</h5>
+      <div class="input-group">
+        <span class="input-group-addon" id="basic-addon1"></span>
+        <input id="host" type="text" class="form-control" placeholder="host" aria-describedby="basic-addon1">
+      </div>
+      <div class="input-group">
+        <span class="input-group-addon" id="basic-addon1"></span>
+        <input id="fromdomain" type="text" class="form-control" placeholder="fromdomain" aria-describedby="basic-addon1">
+      </div>
+        <div class="input-group">
+        <span class="input-group-addon" id="basic-addon1"></span>
+        <input id="port" type="text" class="form-control" placeholder="port" aria-describedby="basic-addon1">
+      </div>
+      <div id="result"></div>
+      <div id="result" class="" role="alert"></div>
+      <button id="createProvlineBtn" class="button tiny" type="submit">Create</button>
+    </form>
+  </div>
+</div>

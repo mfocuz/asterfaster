@@ -1,0 +1,34 @@
+% layout 'config';
+<div class="row">
+	<div class="large-12 columns">
+		<form id="contextCreateForm">
+			<div class="row">
+				<div class="large-2 columns">
+					<img src="/images/svgs/fi-list-bullet.svg" class="icon_size5">
+				</div>
+				<div class="large-10 columns">
+					<br>
+					<div id="result" class=""></div>
+				</div>
+			</div>
+			<input id="name" type="text" placeholder="Dialplan name">
+			<br>
+			<div id="extensions">
+				<div id="exten0-div" class="row" style="display:none">
+					<div class="large-8 columns">
+						<input id="exten0-input" type="text" class="form-control exten-input" placeholder="Exten" aria-describedby="basic-addon1">
+					</div>
+					<div class="large-2 columns">
+						<input id="cdr0" type="checkbox" class="cdr"><label for="cdr">Call recording</label>
+					</div>
+					<div class="large-2 columns">
+						<a href="#" class="button tiny warning deleteExten">Remove extension</a>
+					</div>
+				</div>
+			</div>
+			
+			<a id="addExtenBtn" href="#" class="button tiny success">Add extension</a>
+			<a id="createContextBtn" href="#" class="button tiny">Create dialplan</a>
+		</form>
+	</div>
+</div>

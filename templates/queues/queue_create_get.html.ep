@@ -1,0 +1,63 @@
+% layout 'config';
+<div class="row">
+    <div class="large-4 columns">
+    <img src="/images/svgs/fi-torsos-all.svg" class="icon_size5">
+    <form id="queueCreateForm">
+      <div class="page-header">
+        <h4>Create new Queue</h4>
+      </div>
+      <div class="input-group">
+        <span class="input-group-addon" id="basic-addon1"></span>
+        <input id="name" type="text" class="form-control" placeholder="Queue name" aria-describedby="basic-addon1">
+      </div>
+      <div class="input-group">
+        <span class="input-group-addon" id="basic-addon1"></span>
+        <input id="timeout" type="text" class="form-control" placeholder="Timeout (seconds)" aria-describedby="basic-addon1">
+      </div>
+      <h5>Strategy</h5>
+      <ul class="dropdown-menu" role="menu">
+        <li id=""></li>
+        <li class="divider"></li>
+        <li><a href="/user">Create user</a></li>
+      </ul>
+      <select id="strategy" class="form-control">
+        <option>ringall</option>
+        <option>leastrecent</option>
+        <option>fewestcalls</option>
+        <option>random</option>
+        <option>rrmemory</option>
+      </select>
+      <div class="row">
+        <div class="col-md-4">
+          <h5>Users</h5>
+          <select multiple id="user_list" class="form-control" size="8">
+            %foreach my $user (sort @$userNumbers) {
+            <option value="<%=$user%>"><%=$user%></option>
+            %}
+          </select>
+        </div>
+        
+        <div class="col-md-4">
+          <div>
+            <button id="include" type="button" class="btn btn-default btn-lg">
+              <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+            </button>
+          </div>
+  
+          <div>
+            <button id="exclude" type="button" class="btn btn-default btn-lg">
+              <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
+            </button>
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <h5>Queue members</h5>
+          <select multiple id="queue_members" class="form-control" size="8">
+          </select>
+        </div>
+      </div>
+      <div id="result"></div>
+      <div id="result" class="" role="alert"></div>
+      <button id="createQueueBtn" class="btn btn-lg btn-primary btn-block" type="submit">Create</button>
+    </form>
