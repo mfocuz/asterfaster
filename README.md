@@ -1,4 +1,4 @@
 # asterfaster
 Asterisk Web UI build with Perl Mojolicious framework
 
-#UNDER CONSTRUCTION
+This project left here only for kinda Protfolo. No further development planned.
